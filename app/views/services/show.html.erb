@@ -1,2 +1,18 @@
-<h1>Services#show</h1>
-<p>Find me in app/views/services/show.html.erb</p>
+<div class="container my-5">
+  <h2>Serviço: <%= @service.title %></h2>
+
+  <ul class="list-group">
+    <li class="list-group-item"><strong>Disponibilidade:</strong> <%= @service.available %></li>
+    <li class="list-group-item"><strong>Dias disponíveis:</strong> <%= @service.available_at %></li>
+    <li class="list-group-item"><strong>Descreva como você realiza esse trabalho:</strong> <%= @service.description %></li>
+    <li class="list-group-item"><strong>Valor da hora:</strong> <%= @service.price_hour %></li>
+    <li class="list-group-item"><strong>Duração mínima do serviço:</strong> <%= @service.min_duration %></li>
+    <li class="list-group-item"><strong>Duração máxima do serviço:</strong> <%= @service.max_duration %></li>
+  </ul>
+
+  <br>
+
+  <p><%= link_to 'Editar serviço', edit_service_path(@service) %><p>
+
+  <p><%= link_to 'Voltar para lista de serviços', services_path %><p>
+</div>
