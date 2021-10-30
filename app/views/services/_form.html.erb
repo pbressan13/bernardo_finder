@@ -1,0 +1,10 @@
+<%= simple_form_for [service] do |f| %>
+    <%= f.input :title, :collection => %w[Churrasco Compras Limpeza\ pós-evento Toca\ pagode] %>
+    <%= f.input :available, as: :radio_buttons, collection: [['0', 'Disponível'], ['1', 'Indisponível']], label_method: :second, value_method: :first %>
+    <%= f.input :available_at, :collection => %w[Domingo Segunda Terça Quarta Quinta Sexta Sábado]%>
+    <%= f.input :price_hour %>
+    <%= f.input :description %>
+    <%= f.input :min_duration %>
+    <%= f.input :max_duration %>
+    <%= f.submit "Adicionar serviço", class: "btn btn-primary" %>
+<% end %>
