@@ -1,10 +1,10 @@
 class ServicesController < ApplicationController
-  before_action :find_service, only: %i[show edit]
+  before_action :find_service, only: %i[show edit update destroy]
   def show
   end
 
   def index
-    @services = Services.all
+    @services = Service.all
   end
 
   def new
@@ -26,7 +26,9 @@ class ServicesController < ApplicationController
   end
 
   def update
-    @service.update(services_params)
+    @service.update(service_params)
+    @service.user = current_user
+    @service.available_at = parse_list
     if @service.save
       redirect_to service_path(@service)
     else
@@ -36,6 +38,7 @@ class ServicesController < ApplicationController
 
   def destroy
     @service.destroy
+
     redirect_to services_path
   end
 

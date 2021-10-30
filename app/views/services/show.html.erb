@@ -13,6 +13,10 @@
   <br>
 
   <p><%= link_to 'Editar serviço', edit_service_path(@service) %><p>
+  <p><%= link_to 'Excluir serviço',
+                service_path(@service),
+                method: :delete,
+                data: { confirm: "Tem certeza que deseja excluir esse serviço?" } %></p>
 
   <p><%= link_to 'Voltar para lista de serviços', services_path %><p>
 </div>
