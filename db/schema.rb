@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_230100) do
+ActiveRecord::Schema.define(version: 2021_10_30_140042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "service_id", null: false
+    t.decimal "total_price"
+    t.integer "duration"
+    t.date "book_date"
+    t.boolean "accepted"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["service_id"], name: "index_bookings_on_service_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.boolean "available"
+    t.decimal "price_hour"
+    t.text "address"
+    t.text "description"
+    t.string "title"
+    t.string "available_at"
+    t.integer "min_duration"
+    t.integer "max_duration"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_services_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +52,16 @@ ActiveRecord::Schema.define(version: 2021_10_28_230100) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "role"
+    t.text "address"
+    t.text "description"
+    t.string "distance_radius"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "services"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "services", "users"
 end
