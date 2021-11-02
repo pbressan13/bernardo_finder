@@ -6,5 +6,6 @@
     <%= f.input :price_hour, label: "Valor da hora:" %>
     <%= f.input :min_duration, label: "Duração mínima do serviço:" %>
     <%= f.input :max_duration, label: "Duração máxima do serviço:" %>
+    <%= f.input :images, as: :file, :input_html => { :multiple => true }, label: "Fotos do seu serviço:" %>
     <%= f.submit "Confirmar", class: "btn btn-primary" %>
 <% end %>

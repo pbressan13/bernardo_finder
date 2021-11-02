@@ -61,6 +61,7 @@ class ServicesController < ApplicationController
                                     :description,
                                     :price_hour,
                                     :min_duration,
-                                    :max_duration)
+                                    :max_duration,
+                                    images: [])
   end
 end
