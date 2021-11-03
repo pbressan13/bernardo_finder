@@ -15,5 +15,6 @@
     <%= f.input :price_hour, as: :currency, label: "Valor da hora:" %>
     <%= f.input :min_duration, label: "Duração mínima do serviço (horas):" %>
     <%= f.input :max_duration, label: "Duração máxima do serviço (horas):" %>
+    <%= f.input :images, as: :file, :input_html => { :multiple => true }, label: "Fotos do seu serviço:" %>
     <%= f.submit "Confirmar", class: "btn btn-ghost" %>
 <% end %>
