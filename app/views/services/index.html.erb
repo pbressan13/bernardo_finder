@@ -1,12 +1,12 @@
 <div class="container my-5">
-  <h2><strong>Meus serviços:</strong></h2>
+  <h2><strong>Meus serviços</strong></h2>
 
   <div class="card-deck cards my-3">
     <% @services.each do |service| %>
       <div class="card-product">
         <img src= <%= Service::IMAGES[service.title] %> >
         <div class="card-product-infos">
-          <h2><%= link_to service.title, service_path(service) %></h2>
+          <h2><%= link_to service.title, service_path(service), class: "a-primary" %></h2>
           <p><%= service.description %></p>
         </div>
       </div>
