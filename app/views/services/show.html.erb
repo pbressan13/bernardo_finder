@@ -2,12 +2,18 @@
   <h2>Serviço: <%= @service.title %></h2>
 
   <ul class="list-group">
-    <li class="list-group-item"><strong>Disponibilidade:</strong> <%= @service.available %></li>
+    <li class="list-group-item"><strong>Disponibilidade:</strong>
+    <% if @service.available %>
+      <i class="fas fa-check" style="color:green"></i>
+    <% else %>
+      <i class="fas fa-times" style="color:red"></i>
+    <% end %>
+    </li>
     <li class="list-group-item"><strong>Dias disponíveis:</strong> <%= @service.available_at %></li>
     <li class="list-group-item"><strong>Descreva como você realiza esse trabalho:</strong> <%= @service.description %></li>
-    <li class="list-group-item"><strong>Valor da hora:</strong> <%= @service.price_hour %></li>
-    <li class="list-group-item"><strong>Duração mínima do serviço:</strong> <%= @service.min_duration %></li>
-    <li class="list-group-item"><strong>Duração máxima do serviço:</strong> <%= @service.max_duration %></li>
+    <li class="list-group-item"><strong>Valor da hora (R$):</strong> <%= @service.price_hour %></li>
+    <li class="list-group-item"><strong>Duração mínima do serviço (horas):</strong> <%= @service.min_duration %></li>
+    <li class="list-group-item"><strong>Duração máxima do serviço (horas):</strong> <%= @service.max_duration %></li>
   </ul>
 
 <% if @service.images.count > 0 %>
@@ -39,11 +45,14 @@
 
   <br>
 
-  <p><%= link_to 'Editar serviço', edit_service_path(@service) %><p>
-  <p><%= link_to 'Excluir serviço',
-                service_path(@service),
-                method: :delete,
-                data: { confirm: "Tem certeza que deseja excluir esse serviço?" } %></p>
+  <div class="row">
+    <%= link_to 'Editar serviço', edit_service_path(@service), class: "btn btn-ghost mx-2" %>
+    <%= link_to 'Excluir serviço',
+                  service_path(@service),
+                  method: :delete,
+                  data: { confirm: "Tem certeza que deseja excluir esse serviço?" },
+                  class: "btn btn-ghost mx-2" %>
 
-  <p><%= link_to 'Voltar para lista de serviços', services_path %><p>
+    <%= link_to 'Voltar para lista de serviços', services_path, class: "btn btn-ghost mx-2" %>
+  </div>
 </div>
