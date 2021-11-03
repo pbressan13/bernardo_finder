@@ -1,15 +1,19 @@
 <div class="container my-5">
-  <h2><strong>Minha lista de serviços:</strong></h2>
+  <h2><strong>Meus serviços:</strong></h2>
 
-  <div class="card-product">
+  <div class="card-deck cards my-3">
     <% @services.each do |service| %>
-      <img src= <%= Service::IMAGES[service.title] %> >
-      <div class="card-product-infos">
-        <h2><%= link_to service.title, service_path(service) %></h2>
-        <p><%= service.description %></p>
+      <div class="card-product">
+        <img src= <%= Service::IMAGES[service.title] %> >
+        <div class="card-product-infos">
+          <h2><%= link_to service.title, service_path(service) %></h2>
+          <p><%= service.description %></p>
+        </div>
       </div>
-    <% end %>
+      <% end %>
   </div>
 
-  <%= link_to 'Novo serviço', new_service_path(@service), class: "btn btn-ghost mx-2" %>
+  <% if @services.count != Service::IMAGES.count %>
+    <%= link_to 'Novo serviço', new_service_path(@service), class: "btn btn-ghost mx-2 my-5" %>
+  <% end %>
 </div>
