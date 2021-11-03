@@ -1,11 +1,15 @@
 <div class="container my-5">
   <h2><strong>Minha lista de serviços:</strong></h2>
 
-  <% @services.each do |service| %>
-    <h3><%= link_to service.title, service_path(service) %></h3>
-  <% end %>
+  <div class="card-product">
+    <% @services.each do |service| %>
+      <img src= <%= Service::IMAGES[service.title] %> >
+      <div class="card-product-infos">
+        <h2><%= link_to service.title, service_path(service) %></h2>
+        <p><%= service.description %></p>
+      </div>
+    <% end %>
+  </div>
 
-  <br>
-
-  <p><%= link_to 'Novo serviço', new_service_path(@service) %><p>
+  <%= link_to 'Novo serviço', new_service_path(@service), class: "btn btn-ghost mx-2" %>
 </div>

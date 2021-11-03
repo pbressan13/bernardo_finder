@@ -16,5 +16,9 @@
     <%= f.input :min_duration, label: "Duração mínima do serviço (horas):" %>
     <%= f.input :max_duration, label: "Duração máxima do serviço (horas):" %>
     <%= f.input :images, as: :file, :input_html => { :multiple => true }, label: "Fotos do seu serviço:" %>
-    <%= f.submit "Confirmar", class: "btn btn-ghost" %>
+    <div class="row">
+      <%= f.submit "Confirmar", class: "btn btn-ghost mx-2" %>
+      <%= link_to 'Voltar', services_path, class: "btn btn-ghost mx-2" %>
+    </div>
+
 <% end %>
