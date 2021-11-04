@@ -3,13 +3,14 @@
   border: 1px solid #750000;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
+  font-weight: 300;
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
 
 .btn-ghost:hover {
   color: #720000;
+  font-weight: 500;
   opacity: 1;
 }
 
