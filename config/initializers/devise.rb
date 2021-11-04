@@ -277,10 +277,6 @@ config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], c
 # config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback"
 #config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback"
 
-#FACEBOOK_APP_ID=4222802424486544
-#FACEBOOK_APP_SECRET=76d3e41fc30c438a2e0a748c763c8266
-#, token_params: { parse: :json }
-#config.omniauth :facebook, Rails.application.credentials.facebook[:APP_ID], Rails.application.credentials.facebook[:APP_SECRET], token_params: { parse: :json }
 
 
 
