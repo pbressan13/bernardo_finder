@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name role description distance_radiu avatar])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name barbecue_flag address description distance_radius avatar])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: %i[name role description distance_radius avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[name barbecue_flag address description distance_radius avatar])
   end
 end
