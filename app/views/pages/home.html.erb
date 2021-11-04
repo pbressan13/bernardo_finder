@@ -1,7 +1,25 @@
 <div class="container my-5">
-Lorem ipsum dolor sit amet. Rem quisquam explicabo et facere itaque quo vitae amet. At doloribus facilis aut dolor dolorum sit cumque autem aut deleniti reiciendis et veniam repellat. Cum internos nobis aut quibusdam incidunt sit similique voluptatibus?
-
-Est quam sequi qui libero repudiandae et nihil voluptatum non voluptatem aliquid est omnis quam sed omnis provident. Non repellendus autem vel molestias accusantium est ratione adipisci a accusantium dolorem ad veniam recusandae. Sed consectetur voluptatum et voluptas consequuntur ex illo excepturi vel officiis culpa et impedit praesentium aut omnis eligendi.
-
-Et molestiae dolorum aut doloribus architecto sed consequuntur velit. Ut voluptates consequatur et labore aut architecto ipsa non dolorem dolores vel galisum unde hic dolorem laboriosam.
+  <div class="row my-5">
+    <%= image_tag "logo_com_texto.png", class: 'logo_home' %>
+  </div>
+    <h4>
+      Bernardo Finder é uma plataforma <strong>revolucionária</strong> que liga churrasqueiros com diversos talentos
+      (apelidados de "Bernardos" => <%= image_tag "AVATAR_BERNARDO.png", class: 'avatar-square' %>) a usuários que gostariam
+      de comer um churrasco de qualidade sem maiores preocupações.
+      <br>
+      <br>
+      Quer encontrar um <%= image_tag "AVATAR_BERNARDO.png", class: 'avatar-square' %>? Basta utilizar o formulário de busca!
+      <br>
+      <br>
+      Quer ser um <%= image_tag "AVATAR_BERNARDO.png", class: 'avatar-square' %>? Cadastre-se e apresente os seus serviços para o mundo!
+  </h4>
+  <div class="d-flex my-5">
+    <%= render partial: "search_bar" %>
+    <%= render partial: "search_bar" %>
+    <%= render partial: "search_bar" %>
+    <%= render partial: "search_bar" %>
+    <button name="button" type="submit" class="btn btn-ghost">
+      <i class="fas fa-search"></i> Buscar
+    </button>
+  </div>
 </div>
