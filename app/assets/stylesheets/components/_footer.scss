@@ -3,11 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // position: fixed;
-  // bottom: 0;
-  height: 100px;
+  position: fixed;
+  bottom: 0;
+  height: 60px;
   width: 100%;
-  padding: 0px 50px;
+  padding: 0px 30px;
   color: rgba(0,0,0,0.5);
 }
 .footer-links {
@@ -24,6 +24,6 @@
 .footer-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
-  color: #D23333;
+.footer .fa-utensils {
+  color: #720000;
 }
