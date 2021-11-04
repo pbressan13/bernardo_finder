@@ -2,6 +2,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   skip_before_action :verify_authenticity_token, only: :facebook
 
   def facebook
+    raise
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
@@ -14,6 +15,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure
+    raise
     redirect_to root_path
   end
 end

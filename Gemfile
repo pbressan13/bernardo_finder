@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'cloudinary'
 gem 'omniauth-facebook'
+gem 'omniauth', '~> 1.9.1'
 
 group :development, :test do
   gem 'pry-byebug'
