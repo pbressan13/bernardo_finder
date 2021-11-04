@@ -275,10 +275,6 @@ Devise.setup do |config|
 
 config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "https://bernardo-finder.herokuapp.com/users/auth/facebook/callback"
 # config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback"
-#config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback"
-
-
-
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
