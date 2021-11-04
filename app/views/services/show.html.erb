@@ -46,13 +46,12 @@
   <br>
 
   <div class="row">
-    <%= link_to 'Editar serviço', edit_service_path(@service), class: "btn btn-ghost mx-2" %>
-    <%= link_to 'Excluir serviço',
+    <%= link_to 'Editar', edit_service_path(@service), class: "btn btn-ghost mx-2" %>
+    <%= link_to 'Excluir',
                   service_path(@service),
                   method: :delete,
                   data: { confirm: "Tem certeza que deseja excluir esse serviço?" },
                   class: "btn btn-ghost mx-2" %>
-
-    <%= link_to 'Voltar para lista de serviços', services_path, class: "btn btn-ghost mx-2" %>
+    <%= link_to 'Voltar', services_path, class: "btn btn-ghost mx-2" %>
   </div>
 </div>
