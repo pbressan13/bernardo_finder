@@ -276,7 +276,6 @@ Devise.setup do |config|
 config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "https://bernardo-finder.herokuapp.com/users/auth/facebook/callback"
 # config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback"
 #config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback"
-# config.omniauth :facebook, '4222802424486544', '76d3e41fc30c438a2e0a748c763c8266'
 
 #FACEBOOK_APP_ID=4222802424486544
 #FACEBOOK_APP_SECRET=76d3e41fc30c438a2e0a748c763c8266
