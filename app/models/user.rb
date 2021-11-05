@@ -13,7 +13,7 @@ class User < ApplicationRecord
     # name_split = auth.info.name.split
     user = User.where(email: auth.info.email).first
     puts auth.info.image
-    user ||= User.create!(provider: auth.provider, uid: auth.uid, name: auth.info.name, avatar: auth.info.image,
+    user ||= User.create!(provider: auth.provider, uid: auth.uid, name: auth.info.name, avatar: auth.info.image_url,
                           email: auth.info.email, password: Devise.friendly_token[0, 20])
     user
   end
