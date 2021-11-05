@@ -273,7 +273,12 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
-config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "https://bernardo-finder.herokuapp.com/users/auth/facebook/callback"
+config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'],
+                scope: 'public_profile, email, user_about_me, user_birthday',
+                secure_image_url: true,
+                image_size: :large,
+                info_fields: 'name,first_name,last_name,email,birthday,gender',
+                callback_url: "https://bernardo-finder.herokuapp.com/users/auth/facebook/callback"
 # config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback"
 
   # ==> Warden configuration
