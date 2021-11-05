@@ -274,10 +274,10 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
 config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'],
-                scope: 'public_profile, email, user_birthday',
+                scope: 'public_profile, email',
                 secure_image_url: true,
                 image_size: :large,
-                info_fields: 'name,first_name,last_name,email,birthday,gender',
+                info_fields: 'name,first_name,last_name,email',
                 callback_url: "https://bernardo-finder.herokuapp.com/users/auth/facebook/callback"
 # config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback"
 
