@@ -2,11 +2,13 @@
   <div class="col-md-4">
     <h2>Sign up</h2>
 
-    <% unless current_user %>
-      <%= link_to "Register with Facebook", user_facebook_omniauth_authorize_path, method: :post %>
-    <% else %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% end %>
+    <div class="login-fb p-3 align-center">
+      <% unless current_user %>
+        <%= link_to "Continue com Facebook", user_facebook_omniauth_authorize_path, class: "fb connect", method: :post %>
+      <% else %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% end %>
+    </div>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
