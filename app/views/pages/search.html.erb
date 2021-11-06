@@ -9,10 +9,10 @@
     <% @bernardos.each do |bernardo| %>
       <div class="card-bernardo">
         <%= link_to service_path(bernardo) do %>
-          <% if bernardo.images %>
-            <%= cl_image_tag bernardo.images.first.key, class: "card-bernardo-cl" %>
-          <% else %>
+          <% if bernardo.images.blank? %>
             <%= image_tag "SERVICO_SEM_FOTO.png" %>
+          <% else %>
+            <%= cl_image_tag bernardo.images.first.key, class: "card-bernardo-cl" %>
           <% end %>
         <% end %>
         <div class="card-bernardo-infos">
