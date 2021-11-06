@@ -22,22 +22,6 @@
         <%= f.input :email,
                     required: true,
                     input_html: { autocomplete: "email" }%>
-        <%= f.input :avatar, as: :file %>
-        <%= f.input :address,
-                    required: true,
-                    input_html: { autocomplete: "address" }%>
-        <%= f.input :description,
-                    label: 'Breve descrição',
-                    required: true,
-                    input_html: { autocomplete: "descricao" }%>
-        <%= f.input :barbecue_flag, as: :boolean,
-                    checked_value: true,
-                    label: 'Churrasqueiro?',
-                    unchecked_value: false %>
-        <%= f.input :distance_radius, as: :numeric,
-                    label: 'Distância em KM atendida a partir do seu endereço',
-                    required: true,
-                    input_html: { autocomplete: "distancia" }%>
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -45,6 +29,19 @@
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
+        <%= f.input :avatar, as: :file,
+                    required: true %>
+        <%= f.input :address,
+                    required: true,
+                    input_html: { autocomplete: "address" }%>
+        <%= f.input :barbecue_flag, as: :boolean,
+                    checked_value: true,
+                    label: 'Churrasqueiro?',
+                    unchecked_value: false %>
+        <%= f.input :distance_radius, as: :numeric,
+                    label: 'Distância em km atendida a partir do seu endereço',
+                    required: true,
+                    input_html: { autocomplete: "distancia" }%>
       </div>
 
       <div class="form-actions">
