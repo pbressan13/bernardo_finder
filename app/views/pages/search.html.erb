@@ -20,7 +20,7 @@
             <h2><%= bernardo.title %></h2>
             <p><%= bernardo.description %></p>
           </div>
-          <h2 class="card-bernardo-pricing">R$ <%= bernardo.price_hour.to_i %></h2>
+          <h2 class="card-bernardo-pricing">R$ <%= bernardo.price_hour.to_i %>/h</h2>
           <% if User.find(bernardo.user_id).avatar %>
             <%= cl_image_tag User.find(bernardo.user_id).avatar.key, class: "card-bernardo-bernardo avatar-bordered" %>
           <% else %>
