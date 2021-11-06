@@ -36,7 +36,7 @@ gem 'cloudinary'
 gem 'pg_search', '~> 2.3', '>= 2.3.5'
 gem 'omniauth-facebook'
 gem 'omniauth', '~> 1.9.1'
-gem 'date_wrapper'
+# gem 'date_wrapper'
 
 group :development, :test do
   gem 'pry-byebug'
