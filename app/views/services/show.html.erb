@@ -55,7 +55,7 @@
                   method: :delete,
                   data: { confirm: "Tem certeza que deseja excluir esse serviço?" },
                   class: "btn btn-ghost mx-2" %>
-    <%= link_to 'Voltar', services_path, class: "btn btn-ghost mx-2" %>
     <%= link_to 'Agendar serviço', new_service_booking_path(@service.id), class: "btn btn-ghost mx-2" %>
+    <%= link_to 'Voltar', services_path, class: "btn btn-ghost mx-2" %>
   </div>
 </div>
