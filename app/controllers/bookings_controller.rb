@@ -4,7 +4,9 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.where(user: current_user)
+    @bookings = current_user.bookings
+    @my_bookings = current_user.services.map { |service| service.bookings}.flatten
+
   end
 
   def new
