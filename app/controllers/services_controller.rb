@@ -37,6 +37,8 @@ class ServicesController < ApplicationController
   end
 
   def destroy
+    @booking = Booking.where(service: params[:id])
+    @booking.destroy
     @service.destroy
 
     redirect_to services_path
