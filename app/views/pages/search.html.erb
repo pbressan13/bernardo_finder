@@ -1,0 +1,24 @@
+<div class="container my-5">
+  <% if @bernardos.blank? %>
+    <h2>Nenhum Bernardo disponível para esse serviço no momento. &#128546;</h2>
+  <% else %>
+    <h2><strong><%= @bernardos.count %></strong> Bernardos encontrados! &#129385;</h2>
+  <% end %>
+  <br>
+  <div class="card-deck cards my-3">
+    <% @bernardos.each do |bernardo| %>
+      <div class="card-bernardo">
+        <img src="https://raw.githubbernardocontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-bernardo-infos">
+          <div>
+            <h2><%= bernardo.title %></h2>
+            <p><%= bernardo.description %></p>
+          </div>
+          <h2 class="card-bernardo-pricing">R$ <%= bernardo.price_hour %></h2>
+          <img src="https://kitt.lewagon.com/placeholder/bernardos/krokrob" class="card-bernardo-bernardo avatar-bordered" />
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'Voltar', root_path, class: "btn btn-ghost mx-2 my-5" %>
+</div>

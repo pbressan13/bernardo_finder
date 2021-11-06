@@ -4,7 +4,7 @@ class ServicesController < ApplicationController
   end
 
   def index
-    @services = Service.where(user: current_user)
+    @services = current_user.services
   end
 
   def new
