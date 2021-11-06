@@ -13,4 +13,18 @@
       <% end %>
   </div>
 
+  <h2><strong>Agendamentos dos meus serviços</strong></h2>
+
+  <div class="card-deck cards my-3">
+    <% @my_bookings.each do |booking| %>
+      <div class="card-product">
+        <img src= <%= Service::IMAGES[booking.service.title] %> >
+        <div class="card-product-infos">
+
+          <p> R$<%= booking.total_price %> <%= booking.book_date %></p>
+        </div>
+      </div>
+      <% end %>
+  </div>
+
 </div>
