@@ -33,6 +33,10 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'cloudinary'
+gem 'omniauth-facebook'
+gem 'omniauth', '~> 1.9.1'
+gem 'date_wrapper'
+
 
 group :development, :test do
   gem 'pry-byebug'
