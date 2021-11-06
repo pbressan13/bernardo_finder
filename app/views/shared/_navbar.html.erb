@@ -20,6 +20,7 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Meus serviços", services_path, class: "dropdown-item" %>
               <%= link_to "Meus agendamentos", my_bookings_url(current_user), class: "dropdown-item" %>
+              <%= link_to "Meu perfil", edit_user_registration_url(current_user), class: "dropdown-item" %>
               <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
         </li>

@@ -16,19 +16,6 @@
                     label: 'Nome',
                     required: true,
                     input_html: { autocomplete: "Nome" }%>
-        <%= f.input :avatar, as: :file %>
-        <%= f.input :address,
-                    label: 'Endereço',
-                    required: true,
-                    input_html: { autocomplete: "address" }%>
-        <%= f.input :distance_radius, as: :numeric,
-                    label: 'Distância em KM atendida a partir do seu endereço',
-                    required: true,
-                    input_html: { autocomplete: "distancia" }%>
-        <%= f.input :description,
-                    label: 'Breve descrição',
-                    required: true,
-                    input_html: { autocomplete: "descricao" }%>
         <%= f.input :password,
                     hint: "leave it blank if you don't want to change it",
                     required: false,
@@ -40,6 +27,19 @@
                     hint: "we need your current password to confirm your changes",
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
+        <%= f.input :avatar, as: :file %>
+        <%= f.input :address,
+                    label: 'Endereço',
+                    required: true,
+                    input_html: { autocomplete: "address" }%>
+        <%= f.input :barbecue_flag, as: :boolean,
+                    checked_value: true,
+                    label: 'Churrasqueiro?',
+                    unchecked_value: false %>
+        <%= f.input :distance_radius, as: :numeric,
+                    label: 'Distância em km atendida a partir do seu endereço',
+                    required: true,
+                    input_html: { autocomplete: "distancia" }%>
       </div>
 
       <div class="form-actions">
