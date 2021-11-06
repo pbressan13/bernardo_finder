@@ -8,18 +8,15 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @service = Service.find(params[:service_id])
     @booking = Booking.new
   end
 
   def create
-    @service = Service.find(params[:service_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.service = @service
-    @booking.total_price = @service.price_hour.to_i * @booking.duration.to_i
+    @booking.available_at = parse_list
     if @booking.save
-      redirect_to my_bookings_path(current_user)
+      redirect_to booking_path(@booking)
     else
       render :new
     end
@@ -29,10 +26,20 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking.update(booking_params)
+    @booking.user = current_user
+    @booking.available_at = parse_list
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
   end
 
   def destroy
     @booking.destroy
+
+
   end
 
   def create_rating

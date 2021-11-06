@@ -1,0 +1,12 @@
+<h1>Agende esse serviço: <%= service.title %> </h1>
+<p> Feito por: <strong> <%= service.user.name %> </strong> </p>
+
+<%= simple_form_for [service, booking] do |f| %>
+  <%= f.input :duration, collection: service.min_duration..service.max_duration, label: "Duração do serviço (horas):" %>
+  <%= f.input :book_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
+
+    <div class="row">
+      <%= f.submit "Confirmar", class: "btn btn-ghost mx-2" %>
+    </div>
+
+<% end %>
