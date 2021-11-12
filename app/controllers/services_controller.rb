@@ -37,6 +37,8 @@ class ServicesController < ApplicationController
   end
 
   def destroy
+    @service
+    @my_bookings = @service.map { |service| service.bookings }.flatten
     @booking = Booking.where(service: params[:id])
     @booking.destroy
     @service.destroy

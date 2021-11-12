@@ -13,7 +13,7 @@
       <% end %>
   </div>
 
-  <% if @services.count != Service::IMAGES.count %>
+  <% if @services.count != 0 %>
     <%= link_to 'Novo serviço', new_service_path(@service), class: "btn btn-ghost mx-2 my-5" %>
   <% end %>
 </div>
