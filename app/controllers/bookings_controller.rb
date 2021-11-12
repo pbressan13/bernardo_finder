@@ -5,8 +5,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = current_user.bookings
-    @my_bookings = current_user.services.map { |service| service.bookings}.flatten
-
+    @my_bookings = current_user.services.map { |service| service.bookings }.flatten
   end
 
   def new
